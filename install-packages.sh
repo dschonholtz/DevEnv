@@ -1,13 +1,15 @@
 # install all of the ppas for the packages we will install later
+apt-get install software-properties-common
+apt-get update
 while read p; do
   add-apt-repository ppa:"${p}"
 done <ppas.txt
 
-apt update
+apt-get update
 
 # Install the packages
 while read p; do
-	apt install "${p}"
+	apt-get install "${p}"
 done <packages.txt
 
 # install neovim
